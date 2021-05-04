@@ -129,3 +129,8 @@ a:active {
 .logo {
     float: left;
 }
+
+#error {
+    font-family: 'omegaflight';
+    color: #0d64b1;
+}

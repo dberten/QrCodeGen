@@ -1,18 +1,19 @@
 <?php
- require './lib/phpqrcode/phpqrcode/qrlib.php';
- include 'qrcode.php';
+ require 'lib/phpqrcode/phpqrcode/qrlib.php';
+ include './src/qrcode.php';
+ include './src/check_input.php'
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel='stylesheet' href='./style/style.css'/>
+        <link rel='stylesheet' href='style/style.css'/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Generez votre QRCode</title>
     </head>
     <body>
         <header>
-            <img src="logoEpi.png" class="logo" alt="logo"/>
+            <img src="src/images/logoEpi.png" class="logo" alt="logo"/>
             <center>
                 <h1>QrCodeGen</h1>
             </center>
@@ -40,14 +41,14 @@
                if (isset($_POST['data'])) {
                    $content = $_POST['data'];
                    if (!$content)
-                        echo '<center><br />Veuillez renseigner une url.</center>';
+                        echo '<center id="error"><br />Veuillez renseigner une url.</center>';
                    else
                        QR_CODE($content);
                }
                ?>
             <center class="form" id='tel_input'>
                 <form method="post" action="index.php">
-                    <p>Numéro de Téléphone: <input placeholder="xx xx xx xx xx" type="tel" name="numero" /></p>
+                    <p>Numéro de Téléphone: <input placeholder="xxxxxxxxxx" type="tel" name="numero" /></p>
                     <input type="submit" value="Valider"/>
                 </form>
             </center>
@@ -55,8 +56,8 @@
                if (isset($_POST['numero'])) {
                    $phone= $_POST['numero'];
                    $content = "TEL:{$phone}";
-                   if (!$phone)
-                       echo '<center><br />Veuillez indiquer un numéro.</center>';
+                   if (!$phone || !verifTel($phone))
+                       echo '<center id="error"><br />Veuillez indiquer un numéro valide.</center>';
                    else
                        QR_CODE($content);
                }
@@ -71,7 +72,7 @@
                if (isset($_POST['text'])) {
                    $content = $_POST['text'];
                    if (!$content)
-                       echo '<center><br />Veuillez indiquer un texte.</center>';
+                       echo '<center id="error"><br />Veuillez indiquer un texte.</center>';
                    else
                     QR_CODE($content);
                }
@@ -91,8 +92,8 @@
                    $objet = $_POST['obj'];
                    $message = $_POST['message'];
                    $content = 'mailto:'. $email . '?subject=' . urlencode($objet) . '&body=' . urlencode($message);
-                   if (!$email || !$objet || !$message)
-                       echo '<center><br />Veuillez remplir les informations.</center>';
+                   if (!$email || !verifEmail($email) || !$objet || !$message)
+                       echo '<center id="error"><br />Veuillez remplir des informations valides.</center>';
                    else
                     QR_CODE($content);
                }
@@ -110,8 +111,8 @@
                if (isset($_POST['num']) && isset($_POST['msg'])) {
                    $num = $_POST['num'];
                    $msg = $_POST['msg'];
-                   if (!$num)
-                       echo '<center><br />Veuillez remplir les informations.</center>';
+                   if (!$num || !verifTel($num))
+                       echo '<center id="error"><br />Veuillez remplir des informations valides.</center>';
                    else {
                        $content = 'smsto:' . $num . ':' . $msg;
                        QR_CODE($content);
@@ -119,8 +120,8 @@
                }
         ?>
         <footer>
-            <h2><a href="generate_pdf.php">QR_CODE</a></h2>
+            <h2><a href="./src/generate_pdf.php">GENERER UN PDF</a></h2>
         </footer>
     </body>
 </html>
-<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript" src="./src/index.js"></script>
