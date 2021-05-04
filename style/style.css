@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'omegaflight';
+    src: url('../font/omega_flight/omegaflight.ttf');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/montserrat/Montserrat-Regular.otf');
+}
+body {
+    background-color: rgb(211, 219, 235);
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: #0d64b1;
+    color: white;
+    font-size: 30px;
+    font-family: 'omegaflight';
+    border: 6px white inset;
+    border-radius: 10px;
+}
+
+p {
+    font-family: 'Montserrat';
+}
+#menu {
+    background: #0d64b1;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border: 6px white inset;
+    border-radius: 10px;
+}
+#menu h2 {
+    font-family: 'omegaflight';
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+#menu input {
+    background-color: rgb(191, 195, 201);
+    opacity: 0.8;
+    border: 6px white double;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    border-radius: 6px;
+    display: inline;
+    list-style: none;
+}
+#menu input[type='submit'] {
+    font-family: 'Montserrat';
+    font-style: bold;
+}
+footer h2 {
+    background: #0d64b1;
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+    height: 50px;
+    border: 6px white ridge;
+    border-radius: 10px;
+    font-family: 'omegaflight';
+    font-size: 60 px;
+    text-align: center;
+}
+
+#web_input {
+    background: #0d64b1;
+    display: none;
+    border: 6px white ridge;
+    border-radius: 10px;
+}
+#tel_input {
+    display: none;
+    border: 6px white ridge;
+    border-radius: 10px;
+    background: #0d64b1;
+}
+#text_input {
+    display: none;
+    border: 6px white ridge;
+    border-radius: 10px;
+    background: #0d64b1;
+}
+#mail_input {
+    display: none;
+    border: 6px white ridge;
+    border-radius: 10px;
+    background: #0d64b1;
+}
+#sms_input {
+    border: 6px white ridge;
+    border-radius: 10px;
+    display: none;
+    background: #0d64b1;
+}
+
+#qr {
+    display: contents;
+}
+
+#qr h3 {
+    text-align: center;
+    color: #0d64b1;
+    font-family: 'omegaflight';
+}
+
+textarea {
+  border: 1px solid #888; 
+  border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color:white;
+}
+
+.logo {
+    float: left;
+}

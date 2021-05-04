@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'omegaflight';
+    src: url('../font/omega_flight/omegaflight.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/montserrat/Montserrat-Regular.otf');
+}
+
+body {
+    background-color: rgb(211, 219, 235);
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: #0d64b1;
+    color: white;
+    font-size: 30px;
+    font-family: 'omegaflight';
+    border: 6px white inset;
+    border-radius: 10px;
+}
+
+p {
+    font-family: 'omegaflight';
+}
+
+.create_pdf {
+    text-align: center;
+    color: #0d64b1;
+}
