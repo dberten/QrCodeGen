@@ -15,7 +15,7 @@
         <header>
             <img src="src/images/logoEpi.png" class="logo" alt="logo"/>
             <center>
-                <h1>QrCodeGen</h1>
+                <h1>QrCode Gen</h1>
             </center>
         </header>
         <br />
@@ -25,7 +25,7 @@
                 <form id='type' name='type' method='post' action='index.php'>
                     <input type='button' name='btn1' value='Web'/>
                     <input type='button' name='btn2' value='Téléphone'/>
-                    <input type='button' name='btn3' value='Texte'/>
+                    <input type='button' name='btn3' value='Recherche internet'/>
                     <input type='button' name="btn4" value="Envoi d'email"/>
                     <input type='button' name='btn5' value='Envoi de sms'/>
                 </form> 
@@ -40,10 +40,10 @@
             <?php
                if (isset($_POST['data'])) {
                    $content = $_POST['data'];
-                   if (!$content)
-                        echo '<center id="error"><br />Veuillez renseigner une url.</center>';
+                   if (!$content || !verifUrl($content))
+                        echo '<center id="error"><br />Veuillez renseigner une url valide.</center>';
                    else
-                       QR_CODE($content);
+                        QR_CODE($content);
                }
                ?>
             <center class="form" id='tel_input'>
@@ -124,4 +124,4 @@
         </footer>
     </body>
 </html>
-<script type="text/javascript" src="./src/index.js"></script>
+<script type="text/javascript" src="src/manage_event.js"></script>

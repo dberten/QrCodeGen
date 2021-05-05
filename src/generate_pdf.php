@@ -15,16 +15,17 @@
         $obj_pdf->AddPage();
         $content = ob_get_clean();
         $content .= '  
-        <h3 align="center">Votre QR Code:</h3><br /><br />  
-        <center>
-            <img align="auto" src="images/qrcode_etiquette.png" alt="qrcode"/>
-        </center>
+        <h1 align="center" style="text-decoration: underline;">Votre QR Code:</h1>
+        <br /><br /><br /><br />
+        <table cellpadding="1" cellspacing="1" border="1" style="text-align:center;">
+        <tr><td><img src="images/qrcode_etiquette.png" border="0" height="200" width="200" /></td></tr>
+        </table>
         ';
         $obj_pdf->writeHTML($content);
         ob_end_clean();
         $obj_pdf->Output('etiquette.pdf', 'I'); 
     }
-    ?>
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,6 +44,9 @@
             <p>Cliquez pour generer votre pdf</p>
             <input type="submit" name="create_pdf" value="Create PDF" />
         </form>
+        <footer>
+            <h2><a href="../index.php">Revenir à la page d'accueil</a></h2>
+        </footer>
     </body>
 </html>
 

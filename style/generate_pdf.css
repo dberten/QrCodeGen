@@ -31,3 +31,16 @@ p {
     text-align: center;
     color: #0d64b1;
 }
+
+footer h2 {
+    background: #0d64b1;
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+    height: 50px;
+    border: 6px white ridge;
+    border-radius: 10px;
+    font-family: 'omegaflight';
+    font-size: 60 px;
+    text-align: center;
+}

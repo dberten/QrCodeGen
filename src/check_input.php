@@ -13,4 +13,17 @@
         else
             return false;
     }
+    function verifUrl($url) {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_HEADER, 1);
+        curl_setopt($curl, CURLOPT_NOBODY, 1);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_FRESH_CONNECT, 1);
+
+        if(!curl_exec($curl))
+            return false;
+        else 
+            return true;
+    }    
 ?>

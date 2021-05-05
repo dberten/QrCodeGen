@@ -6,6 +6,7 @@
     font-family: 'Montserrat';
     src: url('../font/montserrat/Montserrat-Regular.otf');
 }
+
 body {
     background-color: rgb(211, 219, 235);
 }
@@ -24,6 +25,7 @@ header {
 p {
     font-family: 'Montserrat';
 }
+
 #menu {
     background: #0d64b1;
     padding: 0;
@@ -34,12 +36,14 @@ p {
     border: 6px white inset;
     border-radius: 10px;
 }
+
 #menu h2 {
     font-family: 'omegaflight';
     text-align: center;
     text-decoration: underline;
     color: white;
 }
+
 #menu input {
     background-color: rgb(191, 195, 201);
     opacity: 0.8;
@@ -50,10 +54,12 @@ p {
     display: inline;
     list-style: none;
 }
+
 #menu input[type='submit'] {
     font-family: 'Montserrat';
     font-style: bold;
 }
+
 footer h2 {
     background: #0d64b1;
     bottom: 0;
@@ -79,18 +85,21 @@ footer h2 {
     border-radius: 10px;
     background: #0d64b1;
 }
+
 #text_input {
     display: none;
     border: 6px white ridge;
     border-radius: 10px;
     background: #0d64b1;
 }
+
 #mail_input {
     display: none;
     border: 6px white ridge;
     border-radius: 10px;
     background: #0d64b1;
 }
+
 #sms_input {
     border: 6px white ridge;
     border-radius: 10px;
